@@ -1,15 +1,16 @@
 # Freshman-Immigration-LeetCode-Problems
 
-reverse-string problem:
 
+### Reverse String
+* Problem link: https://leetcode.com/problems/reverse-string/
+
+```python
 class Solution(object):
     def reverseString(self, s):
         l = 0
-        r = len(s)-1
+        r = len(s) - 1
         while l < r:
-            a = s[l]
-            b = s[r]
-            s[l] = b
-            s[r] = a
+            s[l], s[r] = s[r], s[l]
             l += 1
             r -= 1
+```
