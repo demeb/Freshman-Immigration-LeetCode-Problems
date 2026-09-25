@@ -30,3 +30,29 @@ class Solution(object):
                 if nums[i] + nums[j] == target:
                     return [i, j]
 ```
+
+
+
+
+
+### Longest Common Prefix
+* **Problem Link:** [LeetCode - Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/)
+
+```python
+class Solution(object):
+    def longestCommonPrefix(self, strs):
+        ans = ""
+        st = strs[0]
+        for i in range(1, len(strs)):
+            if len(strs[i]) < len(st):
+                st = strs[i]
+
+        for i in range(0, len(st)):
+            ch = st[i]
+            
+            for j in range(0, len(strs)):
+                if strs[j][i] != ch:
+                    return ans
+            ans += ch
+        return ans
+```
